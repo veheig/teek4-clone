@@ -220,6 +220,14 @@ header {
   background-color: rgb(255, 253, 250);
 }
 
+.main-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .product-grid {
   display: flex;
   justify-content: center;
@@ -235,7 +243,6 @@ header {
 .details {
   display: flex;
   justify-content: start;
-  /* align-items: center; */
   flex-direction: column;
 }
 
