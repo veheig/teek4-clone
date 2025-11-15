@@ -67,7 +67,7 @@
           <ul class="nav-list">
             <li class="nav-item">
               <a href="">ABOUT US +</a>
-              <div class="dropdown">
+              <div class="dropdown" id="drop-aboutus">
                 <a href="">About Teeka4</a>
                 <a href="">How We Source Brands</a>
                 <a href="">Authorized Resellers</a>
@@ -76,29 +76,34 @@
             </li>
             <li class="nav-item">
               <a href="">BRANDS +</a>
-              <div class="dropdown" id="drop-aboutus">
-                <ul>
-                  <li>Brands</li>
-                  <li><a href="">Cerave</a></li>
-                  <li><a href="">Touch</a></li>
-                  <li><a href="">Good Molecules</a></li>
-                  <li><a href="">25pskyn</a></li>
-                  <li><a href="">Timeless</a></li>
-                  <li><a href="">Dr Teal's</a></li>
-                  <li><a href="">Medix 5.5</a></li>
-                  <li><a href="">Kojie San</a></li>
-                </ul>
-                <ul>
-                  <li>Asian Brands</li>
-                  <li><a href="">Jumiso</a></li>
-                  <li><a href="">Tiam</a></li>
-                  <li><a href="">Missha</a></li>
-                  <li><a href="">Acwell</a></li>
-                  <li><a href="">Klairs</a></li>
-                  <li><a href="">Beauty of Joseon</a></li>
-                  <li><a href="">I'm From</a></li>
-                  <li><a href="">Skin Aqua</a></li>
-                </ul>
+              <div class="dropdown" id="drop-brands">
+                <div>
+                  <h2>Brands</h2>
+                  <ul>
+                    <li><a href="">Cerave</a></li>
+                    <li><a href="">Touch</a></li>
+                    <li><a href="">Good Molecules</a></li>
+                    <li><a href="">25pskyn</a></li>
+                    <li><a href="">Timeless</a></li>
+                    <li><a href="">Dr Teal's</a></li>
+                    <li><a href="">Medix 5.5</a></li>
+                    <li><a href="">Kojie San</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h2>Asian Brands</h2>
+                  <ul>
+                    <li><a href="">Jumiso</a></li>
+                    <li><a href="">Tiam</a></li>
+                    <li><a href="">Missha</a></li>
+                    <li><a href="">Acwell</a></li>
+                    <li><a href="">Klairs</a></li>
+                    <li><a href="">Beauty of Joseon</a></li>
+                    <li><a href="">I'm From</a></li>
+                    <li><a href="">Skin Aqua</a></li>
+                  </ul>
+                </div>
               </div>
             </li>
             <li class="nav-item">
@@ -212,10 +217,45 @@
         <img src="images/TK-25-B4-18.jpg" alt="" />
       </div>
       <div class="main-down">
-        <div class="main-left"></div>
-        <div class="main-right">
-          <div class="product-grid"></div>
+        <div class="main-left">
+          <div class="accordion">
+            <div class="label">
+              <p>Filter by price</p>
+              <span class="material-symbols-outlined"> add </span>
+            </div>
+            <div class="Content">
+              <div class="range">
+                <input type="range" />
+              </div>
+              <div class="filter">
+                <button>FILTER</button>
+                <p>Price: ₦0 — ₦165,500</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="label">
+              <p>Product Categories</p>
+              <span class="material-symbols-outlined"> add </span>
+            </div>
+            <div class="Content"></div>
+          </div>
+          <div class="accordion">
+            <div class="label">
+              <p>Specific Concerns</p>
+              <span class="material-symbols-outlined"> add </span>
+            </div>
+            <div class="Content"></div>
+          </div>
+          <div class="accordion">
+            <div class="label">
+              <p>Shop By Ingredients</p>
+              <span class="material-symbols-outlined"> add </span>
+            </div>
+            <div class="Content"></div>
+          </div>
         </div>
+        <div class="main-right"></div>
       </div>
       <div class="pagination"></div>
     </main>
