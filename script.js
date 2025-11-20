@@ -1,3 +1,5 @@
+import { cart } from "./cart.js";
+
 const productContainer = document.querySelector(".main-right");
 
 const products = [
@@ -93,7 +95,9 @@ products.forEach((product) => {
                   <span>1</span>
                   <span>+</span>
                 </div>
-                <button>ADD TO CART</button>
+                <button class = "add-to-cart-js" data-product-name = "${
+                  product.name
+                }">ADD TO CART</button>
               </div>
             </div>
           </div>
@@ -109,5 +113,53 @@ const accordion = document.querySelectorAll(".accordion");
 accordion.forEach((acc) => {
   acc.addEventListener("click", function () {
     this.classList.toggle("active");
+  });
+});
+
+const cartSideBar = document.querySelector(".cart");
+const closeButton = document.querySelector(".close-button");
+const openCart = document.querySelector(".cart-container");
+const overlay = document.querySelector(".overlay");
+
+closeButton.addEventListener("click", function () {
+  overlay.style.opacity = "0";
+  overlay.style.pointerEvents = "none";
+  cartSideBar.style.transform = "translateX(100%)";
+});
+
+openCart.addEventListener("click", function () {
+  overlay.style.opacity = "1";
+  overlay.style.pointerEvents = "all";
+  cartSideBar.style.transform = "translateX(0)";
+});
+
+document.querySelectorAll(".add-to-cart-js").forEach((button) => {
+  button.addEventListener("click", () => {
+    const productName = button.dataset.productName;
+
+    let matchingItem;
+
+    cart.forEach((item) => {
+      if (productName === item.productName) {
+        matchingItem = item;
+      }
+    });
+
+    if (matchingItem) {
+      matchingItem.quantity += 1;
+    } else {
+      cart.push({
+        productName: productName,
+        quantity: 1,
+      });
+    }
+
+    let cartQuantity = 0;
+
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
   });
 });
