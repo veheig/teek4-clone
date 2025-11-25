@@ -1,23 +1,26 @@
 import { cart } from "./cart.js";
 import { products } from "./product.js";
+console.log(cart);
 
 const itemContainer = document.querySelector(".items");
 
-itemContainer.innerHTML = "";
+export function displayCart() {
+  if (!cart) {
+    console.log("cart is empty");
+  } else {
+    itemContainer.innerHTML = "";
+    cart.forEach((cartItem) => {
+      console.log("Cart item:", cartItem);
 
-cart.forEach((cartItem) => {
-  console.log("Cart item:", cartItem);
-  console.log("Matching:", matchingProduct);
+      const matchingProduct = products.find(
+        (product) => product.id === cartItem.productId
+      );
 
-  const matchingProduct = products.find(
-    (product) => product.id === cartItem.productId
-  );
+      if (!matchingProduct) return;
 
-  if (!matchingProduct) return;
+      //   console.log(matchingProducts);
 
-  //   console.log(matchingProducts);
-
-  const productHTML = `
+      const productHTML = `
     <div class="products">
         <div class="product-image">
         <img
@@ -42,5 +45,7 @@ cart.forEach((cartItem) => {
     </div>
     `;
 
-  itemContainer.innerHTML += productHTML;
-});
+      itemContainer.innerHTML += productHTML;
+    });
+  }
+}

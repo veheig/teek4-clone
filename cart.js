@@ -8,6 +8,7 @@ export function addToCart(productId) {
       matchingItem = cartItem;
     }
   });
+  console.log("matchingItem", matchingItem);
 
   if (matchingItem) {
     matchingItem.quantity += 1;

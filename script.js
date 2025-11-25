@@ -1,5 +1,6 @@
 import { cart, addToCart } from "./cart.js";
 import { products } from "./product.js";
+import { displayCart } from "./checkout.js";
 
 const productContainer = document.querySelector(".main-right");
 
@@ -76,5 +77,6 @@ document.querySelectorAll(".add-to-cart-js").forEach((button) => {
 
     addToCart(productId);
     updateCartQuantity();
+    displayCart();
   });
 });
